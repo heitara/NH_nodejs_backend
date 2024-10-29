@@ -1,0 +1,19 @@
+{
+  "name": "my_first_node_app",
+  "version": "1.0.0",
+  "description": "My first NodeJS app created with NPM. ",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node src/index.js", 
+    "eventloop": "node src/eventloop.js",
+    "events": "node src/events.js",
+    "ts:start": "tsc src/sample.ts && node src/sample.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Emil Atanasov",
+  "license": "",
+  "type": "module",
+  "dependencies": {
+    "typescript": "^5.6.3"
+  }
+}
