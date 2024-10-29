@@ -12,5 +12,7 @@ const greetListener = (name) => {
 eventEmitter.on('greet', greetListener);
 // Here the code starts listening for the event
 
-// Trigger (emit) the 'greet' event with an argument
+// a new comment goes here
+// Trigger (emit) the 'greet' 
+// event with an argument
 eventEmitter.emit('greet', 'Emil');
