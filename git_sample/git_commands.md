@@ -6,4 +6,11 @@ To create a local git repository use the following command:
 git init
 ```
 
+Here is how to add a file to git:
+
+```bash
+git add your.file
+```
+
+
 
