@@ -1,9 +1,9 @@
-import sum from "./api/v1/math.js";
-
 import _ from "lodash";
 import dayjs from "dayjs";
+import { mul, sum } from "./api/v1/math.js";
 
-// console.log(sum(1,1));
+console.log(sum(1,1));
+console.log(mul(1,1));
 
 console.log(_.chunk(['a', 'b', 'c', 'd', 'more', 'more', 'more'], 2));
 
