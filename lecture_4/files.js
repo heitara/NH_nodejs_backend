@@ -1,6 +1,6 @@
-// import fs from 'node:fs';
+import fs from 'node:fs';
 
-import fs from 'node:fs/promises'; 
+// import fs from 'node:fs/promises'; 
 
 const options = {encoding: 'utf-8'};
 const filename = "new.app.js";
@@ -20,26 +20,28 @@ const filename = "new.app.js";
     
 // }
 
-try {
-    const data = await fs.readFile(filename, options);
-    console.log("Data: ", data);
-} catch (error) {
-    console.log(error);
-}
+// try {
+//     const data = await fs.readFile(filename, options);
+//     console.log("Data: ", data);
+// } catch (error) {
+//     console.log(error);
+// }
 
-
+let d = new Date();
 const info = {
     version: "1.0.0",
-    date: Date(),
+    date: d.getTime(),
     size: 1024
 };
 
-try {
-    const r = await fs.writeFile("output.json", JSON.stringify(info), options);
-    console.log("Result: ", r);
-} catch (error) {
-    console.log(error);
-}
+// try {
+//     const r = await fs.writeFile("output.json", JSON.stringify(info), options);
+//     console.log("Result: ", r);
+// } catch (error) {
+//     console.log(error);
+// }
+
+fs.writeFileSync("output.sync.json", JSON.stringify(info), options);
 
 
 console.log("Finish!");
