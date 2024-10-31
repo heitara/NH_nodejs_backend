@@ -1,0 +1,17 @@
+{
+  "name": "lecture_4_node_app",
+  "version": "1.0.0",
+  "description": "My first NodeJS app created with NPM. ",
+  "main": "new.app.js",
+  "scripts": {
+    "start": "node new.app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Emil Atanasov",
+  "license": "",
+  "type": "module",
+  "dependencies": {
+    "dayjs": "^1.11.13",
+    "lodash": "^4.17.21"
+  }
+}
