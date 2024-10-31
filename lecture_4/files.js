@@ -20,12 +20,12 @@ const filename = "new.app.js";
     
 // }
 
-// try {
-//     const data = await fs.readFile(filename + ".invalid", options);
-//     console.log("Data: ", data);
-// } catch (error) {
-//     console.log(error);
-// }
+try {
+    const data = await fs.readFile(filename, options);
+    console.log("Data: ", data);
+} catch (error) {
+    console.log(error);
+}
 
 
 const info = {
