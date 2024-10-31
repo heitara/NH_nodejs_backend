@@ -5,6 +5,7 @@
   "main": "new.app.js",
   "scripts": {
     "start": "node new.app.js",
+    "files": "node files.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Emil Atanasov",
