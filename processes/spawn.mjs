@@ -1,6 +1,6 @@
 import {spawn} from 'node:child_process';
 
-const ls = spawn('ls');
+const ls = spawn('ls', ["-l"]);
 
 ls.stdout.on('data', (data) => {
     console.log(`stdout: ${data}`);
@@ -9,7 +9,11 @@ ls.stdout.on('data', (data) => {
 ls.stderr.on('data', (data) => {
     console.error(`stderr: ${data}`);
 });
-  
+
+ls.on('error', (error) => {
+    console.log(`child process emits an error ${error}`);
+});
+
 ls.on('close', (code, signal) => {
     console.log(`child process exited with code ${code} and ${signal}`);
 });
