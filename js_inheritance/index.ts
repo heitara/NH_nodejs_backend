@@ -41,4 +41,30 @@ const baseInstance = Object.create(basePrototype,
  );
 
 //  myFirstInstance.log();
-myFirstInstance.firstLog();
+// myFirstInstance.firstLog();
+
+
+function MyClass() {
+    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/prototype
+    let data = Object.create(Object.prototype);
+    data.name = "MyClass";
+
+    return data;
+}
+
+const aClass = MyClass();
+
+console.log(aClass);
+
+function Ctor() { }
+const inst = new Ctor();
+console.log(Object.getPrototypeOf(inst) === Ctor.prototype); // true
+
+
+function Point(x, y) {
+    this.x = x;
+    this.y = y;
+}
+
+const zeroPoint = new Point(0, 0);
+console.log("Point.prototype check! ", Object.getPrototypeOf(zeroPoint) === Point.prototype);
