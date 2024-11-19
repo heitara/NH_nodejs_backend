@@ -8,6 +8,7 @@ const port = 3000;
 // express middleware
 // process the data that's sent as json
 app.use(express.json()); 
+app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
   res.send('Hello World');
@@ -28,6 +29,42 @@ app.post('/blog/publish', (req, res) => {
             id: 1,
             title: "New blog post",
             text: "Some text goes here"
+        }
+    };
+    res.send(result);
+});
+
+app.post('/user/create', (req, res) => {
+    console.log("Data: ", req.body);
+
+    const result = {
+        success: true,
+        data: {
+            id: 1,
+            name: "Demo",
+            email: "demo@gmail.com"
+        }
+    };
+    res.send(result);
+});
+//CRUD
+app.get('/user/:id', (req, res) => {
+    const userId = req.params.id;
+    console.log("userId: ", userId);
+    console.log("Data: ", req.body);
+    console.log("Type: ", typeof userId);
+
+    const parsedId = parseInt(userId);
+    if(isNaN(parsedId)) {
+        res.send({succes: false, error: "Invalid user id!"});
+        return;
+    }
+    const result = {
+        success: true,
+        data: {
+            id: parsedId,
+            name: "Demo",
+            email: "demo@gmail.com"
         }
     };
     res.send(result);
