@@ -42,3 +42,6 @@ assert.doesNotThrow(
 
 assert.ifError(null); //OK
 assert.ifError(undefined); //OK
+
+
+assert.match('I will pass', /pass/);//OK
