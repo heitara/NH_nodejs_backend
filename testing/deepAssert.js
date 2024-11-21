@@ -45,3 +45,15 @@ assert.ifError(undefined); //OK
 
 
 assert.match('I will pass', /pass/);//OK
+
+
+// the function rejects the promise
+// assert.doesNotReject(Promise.reject(new TypeError('Wrong value')))
+//   .then(() => {
+//     console.log("Ready?");
+//   });
+
+  assert.doesNotReject(Promise.resolve())
+  .then(() => {
+    console.log("Ready?");
+  });
