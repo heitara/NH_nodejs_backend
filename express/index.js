@@ -1,4 +1,5 @@
 import express from 'express';
+import { router } from './src/user/endpoints.js';
 
 const app = express();
 const port = 3000;
@@ -34,41 +35,7 @@ app.post('/blog/publish', (req, res) => {
     res.send(result);
 });
 
-app.post('/user/create', (req, res) => {
-    console.log("Data: ", req.body);
-
-    const result = {
-        success: true,
-        data: {
-            id: 1,
-            name: "Demo",
-            email: "demo@gmail.com"
-        }
-    };
-    res.send(result);
-});
-//CRUD
-app.get('/user/:id', (req, res) => {
-    const userId = req.params.id;
-    console.log("userId: ", userId);
-    console.log("Data: ", req.body);
-    console.log("Type: ", typeof userId);
-
-    const parsedId = parseInt(userId);
-    if(isNaN(parsedId)) {
-        res.send({succes: false, error: "Invalid user id!"});
-        return;
-    }
-    const result = {
-        success: true,
-        data: {
-            id: parsedId,
-            name: "Demo",
-            email: "demo@gmail.com"
-        }
-    };
-    res.send(result);
-});
+app.use('/user', router);
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
