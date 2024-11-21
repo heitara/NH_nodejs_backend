@@ -1,4 +1,5 @@
 const assert = require('node:assert');
+const { sum } = require('./tools');
 
 const obj1 = {
   a: {
@@ -32,7 +33,12 @@ assert.deepEqual(obj1, obj3);
 
 assert.doesNotThrow(
     () => {
-        throw new TypeError('Wrong value');
+        // throw new TypeError('Wrong value');
+        sum(7, 7);
     },
     SyntaxError,
 );
+
+
+assert.ifError(null); //OK
+assert.ifError(undefined); //OK
