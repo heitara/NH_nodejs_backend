@@ -17,3 +17,6 @@ assert.strictEqual(sum(1, 0), 1, "sum(1,0) is not working as expected!");
 
 
 console.log("End!");
+
+assert.equal(1, '1', `${1} is not equal to ${'1'}!`); // OK
+// assert.strictEqual(1, '1', "These values are not equal!"); // fails
