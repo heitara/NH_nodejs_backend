@@ -1,0 +1,16 @@
+{
+  "name": "debugging",
+  "version": "0.0.1",
+  "description": "A NodeJS project to debug",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "debugging",
+    "nodejs"
+  ],
+  "author": "Emil Atanasov",
+  "license": "MIT"
+}
