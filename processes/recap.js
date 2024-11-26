@@ -47,31 +47,31 @@ print(`Memory =`, process.memoryUsage());
 // start it using
 // echo "hey, NodeJS!" | node processes/recap.js
 // process.stdin.setEncoding('utf-8');
-process.stdin.on('data', (data) => {
-    console.log(`You entered: ${data.toString()}`);
-    process.exit(); // End the process
-});
+// process.stdin.on('data', (data) => {
+//     console.log(`You entered: ${data.toString()}`);
+//     process.exit(); // End the process
+// });
   
 
-// const readable = getReadableStreamSomehow();
+// const readable =  ();
 // alternative implementation using readable stream
-// const readable = process.stdin;
+const readable = process.stdin;
 
-// 'readable' may be triggered multiple times as data is buffered in
-// readable.on('readable', () => {
-//   let chunk;
-//   console.log('Stream is readable (new data received in buffer)');
-//   let collect = "";
-//   // Use a loop to make sure we read all currently available data
-//   while (null !== (chunk = readable.read())) {
-//     collect += chunk;
-//     console.log(`Read ${chunk.length} bytes of data...`);
-//   }
+// 'readable' may be triggered multiplels times as data is buffered in
+readable.on('readable', () => {
+  let chunk;
+  console.log('Stream is readable (new data received in buffer)');
+  let collect = "";
+  // Use a loop to make sure we read all currently available data
+  while (null !== (chunk = readable.read())) {
+    collect += chunk;
+    console.log(`Read ${chunk.length} bytes of data...`);
+  }
 
-//   console.log("All = ", collect);
-// });
+  console.log("All = ", collect);
+});
 
 // 'end' will be triggered once when there is no more data available
-// readable.on('end', () => {
-//   console.log('Reached end of stream.');
-// });
+readable.on('end', () => {
+  console.log('Reached end of stream.');
+});
