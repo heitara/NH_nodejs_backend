@@ -1,6 +1,8 @@
 const axios = require('axios');
 const utils = require('./utils.js');
-
+// to initiate a debug session use the following command
+// node --inspect-brk=9229 index.js 
+debugger;
 const sum = utils.sum;
 const print = utils.print;
 
@@ -25,7 +27,7 @@ async function loadUrl(url) {
     return undefined;
 }
 
-loadUrl("https://google.com/").then((response) => {
-    console.log("Response: ", response);
-})
-.catch(console.error);
+// loadUrl("https://google.com/").then((response) => {
+//     console.log("Response: ", response.data);
+// })
+// .catch(console.error);
