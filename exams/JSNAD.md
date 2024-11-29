@@ -133,3 +133,11 @@ The **JSNAD (JavaScript Node.js Application Developer)** certification exam test
     
 5.  **Time Management**: The JSNAD exam is time-bound (2 hours). Practice solving problems efficiently.
 6.  **Proctoring:** The exam is an online exam and you will be monitored (proctored) not to cheat. So, you need a good camera, that's working fine. A good (stable) internet connection. You should log earlier and validate that your computer and internet connection is meeting the requirements. 
+
+
+**Extra resources:**
+https://semver.npmjs.com/
+https://semver.org/
+https://exercism.org/tracks/javascript
+https://www.geeksforgeeks.org/node-exercises/
+https://www.codewars.com/
