@@ -50,9 +50,16 @@ const https = require("node:https");
 //     response.on('error', console.log);
 // }).on('error', console.log);
 
+// const tId = setTimeout(() => {
+    
+// }, 2000);
+
+// clearTimeout(tId);
+
 if(process.argv.length > 2) {
     let third = process.argv[2];
-    
+    const LOADING_TIME = "LOADING_TIME";
+    console.time(LOADING_TIME);
     http.get(third, (response) => {
 
         let responseData = [];
@@ -61,6 +68,7 @@ if(process.argv.length > 2) {
         });
     
         response.on('end', () => {
+            console.timeEnd(LOADING_TIME);
             console.log("Finished! \n", Buffer.concat(responseData).toString('utf8'));
         });
     
@@ -69,4 +77,3 @@ if(process.argv.length > 2) {
 } else {
     console.log("Please explore the source code of the script for more information.")
 }
-
