@@ -18,6 +18,15 @@
             "request": "attach",
             "name": "Attach to a Process",
             "port": 9229
-        }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program > watch.js",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/filesystem/watch.js"
+        },
     ]
 }
