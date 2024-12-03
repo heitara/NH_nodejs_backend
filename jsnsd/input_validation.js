@@ -36,6 +36,32 @@ app.post('/register', (req, res) => {
     res.send('User registered!');
 });
 
+const responseSchema = z.object({
+    success: z.boolean(),
+    data: z.object({
+        id: z.number().int(),
+        username: z.string(),
+        jwt: z.string()
+    })
+});
+
+app.get('/user/:id', (req, res) => {
+    // TODO: validate id parameter to be a valid int using zod
+    const id = req.params.id;
+    // TODO: fetch user from database
+    const user = { id: parseInt(id),
+        username: 'Batman',
+        jwt: 'a.valid.jwt.token.goes.here' };
+    const fullResponse = { success: true, data: user };
+    const validationResult = responseSchema.safeParse(fullResponse);
+
+    if (!validationResult.success) {
+        return res.status(500).send({success:false, errors: validationResult.error.errors});
+    }
+
+    res.send(fullResponse);
+});
+
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
