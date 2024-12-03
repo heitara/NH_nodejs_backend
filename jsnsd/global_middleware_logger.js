@@ -19,6 +19,11 @@ const logger = (req, res, next) => {
 // register a global middleware
 app.use(logger);
 
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');    
+});
+
 app.use(express.json());
 app.use((req, res, next) => {
     const urlParts = url.parse(req.url, false);
@@ -70,6 +75,10 @@ app.get('/user/:id', (req, res) => {
     res.send(fullResponse);
 });
 
+
+app.get('/error', (req, res, next) => {
+    next(new Error('Something went wrong!'));
+});
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
