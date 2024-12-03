@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "ee50520f-3420-4a84-aa1e-438e48759c94",
+		"name": "JSNSD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3749778"
+	},
+	"item": [
+		{
+			"name": "Register a user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"{{username}}\",\n    \"name\": \"{{name}}\",\n    \"email\": \"{{username}}@gmail.com\",\n    \"age\": {{age}}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register a user (missing username)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{{name}}\",\n    \"email\": \"{{username}}@gmail.com\",\n    \"age\": \"{{age}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user information",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/user/{{userId}}?key=12345",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"{{userId}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "12345"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Simulate error",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/error",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"error"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
