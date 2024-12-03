@@ -1,0 +1,17 @@
+{
+  "name": "jsnsd",
+  "version": "1.0.0",
+  "description": "express samples",
+  "main": "validate_code.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "Emil Atanasov",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
